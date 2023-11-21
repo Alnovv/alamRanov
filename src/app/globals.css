@@ -7,8 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -17,11 +16,33 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color:#000000;
 }
+
+
+
+@keyframes marquee {
+  0%,100% {
+    width: 15%;
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50% {
+    width: 15%;
+    transform: scaleX(7);
+  }
+  75% {
+    width: 15%; 
+    transform: scaleX(8);
+  }
+}
+
+
+.animate-marquee {
+  animation: marquee 1.5s linear infinite; 
+}
+
+.logo h4:hover {
+  margin-top:10px;
+}
+
